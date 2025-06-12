@@ -1,7 +1,15 @@
 import type { NextConfig } from "next";
 
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: [
+      "youtube.com",
+      "www.youtube.com",
+      "i.ytimg.com",
+      "img.youtube.com",
+    ],
+  },
 };
 
 export default nextConfig;
