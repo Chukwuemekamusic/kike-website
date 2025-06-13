@@ -162,7 +162,7 @@ const YouTubeCarousel = () => {
         {/* Button to visit entire channel */}
         <div className="text-center mt-12">
           <Link
-            href="https://img.youtube.com/vi/1"
+            href="http://www.youtube.com/channel/UCSpO4gKeq3llQVq7-2BWJyw"
             target="_blank"
             rel="noopener noreferrer"
           >
