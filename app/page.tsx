@@ -8,12 +8,20 @@ export default function Home() {
   const bookData = {
     title: "Loved, Called, and Chosen",
     summary: `Discover your God-given identity and purpose. This book will take you on a journey of healing, truth, and freedom — reminding you of who you are and who God says you are.`,
-    coverSrc: "/images/book-cover.jpg",
+    coverSrc: "/images/book-cover.png",
     epubLink: "/downloads/loved-called-chosen.epub",
     pdfLink: "/downloads/loved-called-chosen.pdf",
   };
 
   const kikelomoProfileImage = "/images/kikelomo-profile.JPEG";
+
+  // --- NEW: Social Media Links ---
+  const kikelomoSocials = {
+    youtube: "http://www.youtube.com/channel/UCSpO4gKeq3llQVq7-2BWJyw",
+    instagram:
+      "https://www.instagram.com/kikelomobalo?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    facebook: "https://www.facebook.com/kikelomobalogun",
+  };
 
   return (
     <div>
@@ -38,7 +46,12 @@ export default function Home() {
       <section id="about">
         {" "}
         {/* Add ID for About Me section */}
-        <AboutMeSection kikelomoImageSrc={kikelomoProfileImage} />
+        <AboutMeSection
+          kikelomoImageSrc={kikelomoProfileImage}
+          youtubeLink={kikelomoSocials.youtube} // Pass new props
+          instagramLink={kikelomoSocials.instagram}
+          facebookLink={kikelomoSocials.facebook}
+        />
       </section>
 
       <section id="youtube">
