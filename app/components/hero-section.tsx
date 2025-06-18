@@ -1,6 +1,8 @@
 // app/components/hero-section.tsx
+"use client";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
+import { trackDownload } from "@/lib/gtag";
 
 interface HeroSectionProps {
   bookTitle: string;
@@ -17,6 +19,20 @@ const HeroSection: React.FC<HeroSectionProps> = ({
   epubDownloadLink,
   pdfDownloadLink,
 }) => {
+  // Handle download tracking
+  const handleDownload = (format: "epub" | "pdf", downloadLink: string) => {
+    // Track the download in GA4
+    trackDownload(format);
+
+    // Create and trigger download
+    const link = document.createElement("a");
+    link.href = downloadLink;
+    link.download = `loved-called-chosen.${format}`;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <section className="relative w-full py-16 md:py-24 lg:py-32 overflow-hidden">
       {/* Blurred Background Image */}
@@ -56,19 +72,19 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             {bookSummary}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
-            <a href={epubDownloadLink} download>
-              <Button className="w-full sm:w-auto bg-kikelomo-gold-primary text-kikelomo-purple-dark hover:bg-kikelomo-gold-accent px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-colors duration-300">
-                Download EPUB
-              </Button>
-            </a>
-            <a href={pdfDownloadLink} download>
-              <Button
-                variant="outline"
-                className="w-full sm:w-auto border-2 border-kikelomo-gold-primary text-kikelomo-gold-primary hover:bg-kikelomo-gold-primary hover:text-kikelomo-purple-dark px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-colors duration-300"
-              >
-                Download PDF
-              </Button>
-            </a>
+            <Button
+              onClick={() => handleDownload("epub", epubDownloadLink)}
+              className="w-full sm:w-auto bg-kikelomo-gold-primary text-kikelomo-purple-dark hover:bg-kikelomo-gold-accent px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-colors duration-300"
+            >
+              Download EPUB
+            </Button>
+            <Button
+              onClick={() => handleDownload("pdf", pdfDownloadLink)}
+              variant="outline"
+              className="w-full sm:w-auto border-2 border-kikelomo-gold-primary text-kikelomo-gold-primary hover:bg-kikelomo-gold-primary hover:text-kikelomo-purple-dark px-8 py-3 text-lg font-semibold rounded-full shadow-lg transition-colors duration-300"
+            >
+              Download PDF
+            </Button>
           </div>
           <p className="mt-6 text-sm text-kikelomo-text-light opacity-80">
             *Free for a limited time!
