@@ -48,11 +48,7 @@ export default function RootLayout({
         )}
       </head>
       <body className={inter.className}>
-        <Layout>
-          {" "}
-          {/* Wrap your children with the Layout component */}
-          {children}
-        </Layout>
+        <Layout> {children}</Layout>
       </body>
     </html>
   );

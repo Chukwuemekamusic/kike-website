@@ -79,7 +79,7 @@ const BibleVerseCarousel: React.FC = () => {
                 <Image
                   src={verseData.backgroundImg}
                   alt={`Background for verse ${index + 1}`}
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   quality={70}
                   className="absolute inset-0 z-0 opacity-80" // Adjust opacity as needed

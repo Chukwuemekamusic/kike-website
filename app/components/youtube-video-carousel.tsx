@@ -103,20 +103,19 @@ const YouTubeCarousel = () => {
                 key={video.id}
                 className="pl-4 basis-full sm:basis-1/2 lg:basis-1/3"
               >
-                <div className="bg-kikelomo-purple-dark rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-[1.02]">
+                <div className="bg-kikelomo-purple-dark rounded-lg overflow-hidden shadow-lg transform transition-transform duration-300 hover:scale-[1.02] h-full flex flex-col">
                   <Link
                     href={video.link}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="block relative aspect-video"
+                    className="block relative aspect-video flex-shrink-0"
                   >
                     {/* Use the primary thumbnail, and fallback to hqdefault if maxresdefault fails */}
                     <Image
                       src={video.thumbnail}
                       alt={`YouTube thumbnail for ${video.title}`}
-                      fill
-                      objectFit="cover"
-                      className="rounded-t-lg transition-opacity duration-300 hover:opacity-80"
+                      fill={true}
+                      className="rounded-t-lg transition-opacity duration-300 hover:opacity-80 object-cover"
                       onError={(e) => {
                         e.currentTarget.onerror = null; // Prevent infinite loop
                         e.currentTarget.src = video.fallbackThumbnail; // Use fallback thumbnail
@@ -133,16 +132,17 @@ const YouTubeCarousel = () => {
                       </svg>
                     </div>
                   </Link>
-                  <div className="p-4 text-center">
-                    <h3 className="text-xl font-semibold mb-3 leading-tight text-kikelomo-text-light">
+                  <div className="p-4 text-center flex flex-col justify-between flex-grow">
+                    <h3 className="text-lg font-semibold mb-4 leading-tight text-kikelomo-text-light line-clamp-2 min-h-[3.5rem]">
                       {video.title}
                     </h3>
                     <Link
                       href={video.link}
                       target="_blank"
                       rel="noopener noreferrer"
+                      className="mt-auto"
                     >
-                      <Button className="bg-kikelomo-gold-primary text-kikelomo-purple-dark hover:bg-kikelomo-gold-accent px-6 py-2 rounded-full font-semibold">
+                      <Button className="bg-kikelomo-gold-primary text-kikelomo-purple-dark hover:bg-kikelomo-gold-accent px-6 py-2 rounded-full font-semibold ">
                         Watch Now
                       </Button>
                     </Link>
@@ -167,7 +167,7 @@ const YouTubeCarousel = () => {
             rel="noopener noreferrer"
           >
             <Button className="bg-kikelomo-gold-primary text-kikelomo-purple-dark hover:bg-kikelomo-gold-accent px-10 py-4 text-xl font-bold rounded-full shadow-lg transition-colors duration-300">
-              Visit Kikelomo's YouTube Channel
+              Kikelomo on YouTube
             </Button>
           </Link>
         </div>

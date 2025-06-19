@@ -71,7 +71,7 @@ const AboutMeSection: React.FC<AboutMeSectionProps> = ({
               <Image
                 src={kikelomoImageSrc}
                 alt="Kikelomo O. Balogun"
-                layout="fill"
+                fill
                 objectFit="cover"
                 quality={90}
                 className="transition-transform duration-300 hover:scale-105"
@@ -113,11 +113,11 @@ const AboutMeSection: React.FC<AboutMeSectionProps> = ({
             >
               Through her insightful teachings and powerful messages, she helps
               individuals discover their true{" "}
-              <span className="font-bold text-kikelomo-gold-primary">
+              <span className="font-bold text-kikelomo-purple-dark">
                 identity in Christ
               </span>{" "}
               and walk boldly in their{" "}
-              <span className="font-bold text-kikelomo-gold-primary">
+              <span className="font-bold text-kikelomo-gold-accent">
                 divine purpose
               </span>
               .
@@ -131,7 +131,7 @@ const AboutMeSection: React.FC<AboutMeSectionProps> = ({
                 className="flex items-center gap-3 text-lg"
                 variants={itemVariants}
               >
-                <Heart className="h-6 w-6 text-kikelomo-gold-primary flex-shrink-0" />
+                <Heart className="h-6 w-6 text-kikelomo-gold-accent flex-shrink-0" />
                 <span>
                   Empowering others to live a life rooted in God's love.
                 </span>
@@ -140,14 +140,14 @@ const AboutMeSection: React.FC<AboutMeSectionProps> = ({
                 className="flex items-center gap-3 text-lg"
                 variants={itemVariants}
               >
-                <Lightbulb className="h-6 w-6 text-kikelomo-gold-primary flex-shrink-0" />
+                <Lightbulb className="h-6 w-6 text-kikelomo-gold-accent flex-shrink-0" />
                 <span>Unveiling spiritual insights for daily challenges.</span>
               </motion.li>
               <motion.li
                 className="flex items-center gap-3 text-lg"
                 variants={itemVariants}
               >
-                <BookOpen className="h-6 w-6 text-kikelomo-gold-primary flex-shrink-0" />
+                <BookOpen className="h-6 w-6 text-kikelomo-gold-accent flex-shrink-0" />
                 <span>
                   Guiding journeys of spiritual growth and profound revelation.
                 </span>

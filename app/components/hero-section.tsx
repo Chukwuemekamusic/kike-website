@@ -39,7 +39,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
       <Image
         src="/images/flowers.jpg"
         alt="Beautiful serene garden background"
-        layout="fill"
+        fill
         objectFit="cover"
         quality={80}
         priority // Prioritize loading for LCP
@@ -55,7 +55,7 @@ const HeroSection: React.FC<HeroSectionProps> = ({
             <Image
               src={bookCoverSrc}
               alt={bookTitle}
-              layout="fill"
+              fill
               objectFit="cover"
               quality={90}
               className="rounded-md"
