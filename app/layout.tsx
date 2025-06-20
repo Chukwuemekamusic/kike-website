@@ -13,6 +13,14 @@ export const metadata: Metadata = {
   title: "Kikelomo Balogun - Loved, Called, and Chosen", // A good default title
   description:
     "Discover your identity in Christ with Kikelomo Balogun's free book and biblical encouragements.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.svg", type: "image/svg+xml" },
+      { url: "/icon1.png", type: "image/png" },
+    ],
+    apple: { url: "/apple-icon.png" },
+  },
 };
 
 export default function RootLayout({
